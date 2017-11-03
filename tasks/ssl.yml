@@ -1,0 +1,11 @@
+---
+- name: Create default self-signed cert
+  shell: >
+    openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/default.key -out /etc/ssl/default.crt -subj "/C=RU"
+  args:
+    creates: /etc/ssl/default.crt
+
+- name: Ensure Diffie-Helmann parameters dhparam.pem exists
+  command: openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
+  args:
+    creates: /etc/ssl/certs/dhparam.pem

@@ -32,6 +32,9 @@
 - include: remove-unwanted.yml
   tags: [configuration, nginx]
 
+- include: ssl.yml
+  tags: [configuration, nginx]
+
 - include: configuration.yml
   tags: [configuration, nginx]
 
