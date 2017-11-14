@@ -1,6 +1,6 @@
 ---
 - name: Create default self-signed cert
-  shell: >
+  command: >
     openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/default.key -out /etc/ssl/default.crt -subj "/C=RU"
   args:
     creates: /etc/ssl/default.crt
